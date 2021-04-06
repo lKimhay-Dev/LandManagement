@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | User Management</title>
+    <link rel="stylesheet" layout:fragment="style" th:href="@{/css/user.css}">
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let userId = /*[[${userId}]]*/ 'userId';
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 th:if="${action == 'update'}"> Update System User </h1>
+            <h1 th:if="${action != 'update'}"> Create System User </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">User</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Create</li>
+
+            </ol>
+        </section>
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Seller</label>
+                                <select id="seller" name="seller" class="form-control select2" style="width: 100%;">
+                                    <option disabled selected value="0">Please select a seller...</option>
+                                    <option th:each="seller: ${sellers}" th:value="${seller[0]}" th:text="${seller[1] + ' / ' + seller[2]}"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <div class="input-group">
+                                    <input type="text" name="username" class="form-control" readonly
+                                           autocomplete="off">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="pwd" class="form-control" placeholder="Enter Password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" name="confPwd" class="form-control"
+                                           placeholder="Enter Conform Password">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                        <div class="col-md-12">-->
+                        <!--                            <div class="form-group">-->
+                        <!--                                <label>Role</label>-->
+                        <!--                                <select id="role" name="role" class="form-control select2" style="width: 100%;">-->
+                        <!--                                    <option></option>-->
+                        <!--                                    <option value="Admin">Admin</option>-->
+                        <!--                                    <option value="Seller">Seller</option>-->
+                        <!--                                    <option value="User">User</option>-->
+                        <!--                                </select>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button th:if="${action == 'update'}" type="submit" class="btn btn-primary"
+                                    data-btn="update">UPDATE
+                            </button>
+                            <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" data-btn="save">
+                                SAVE
+                            </button>
+                            <button onclick="document.location='/user-list'" class="btn btn-dark" data-btn="cancel">
+                                CANCEL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/user/create-update.js}"></script>
+
+</body>
+</html>

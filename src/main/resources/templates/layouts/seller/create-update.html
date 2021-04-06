@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | Seller Management</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let sellerId = /*[[${sellerId}]]*/ 'sellerId';
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1 th:if="${action == 'update'}"> Update Seller </h1>
+            <h1 th:if="${action != 'update'}"> Create Seller </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/seller-list">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item ">Seller Management</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Create</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input name="name" type="text" class="form-control" placeholder="Enter Name">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input name="address" type="text" class="form-control" placeholder="Enter Address">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone Number 1</label>
+                                <div class="input-group">
+                                    <input name="phone1" type="tel" class="form-control" placeholder="Ex: 099 999 999">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-phone-square-alt"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Phone Number 2</label>
+                                <div class="input-group">
+                                    <input name="phone2" type="text" class="form-control" placeholder="Ex: 099 999 999">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-phone-square-alt"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button th:if="${action == 'update'}" type="submit" class="btn btn-primary"
+                                    data-btn="update">UPDATE
+                            </button>
+                            <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" data-btn="save">
+                                SAVE
+                            </button>
+
+                            <button onclick="document.location='/seller-list'" class="btn btn-dark" data-btn="cancel">
+                                CANCEL
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/seller/create-update.js}"></script>
+</html>

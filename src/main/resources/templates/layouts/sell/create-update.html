@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | Sell Management</title>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        let action = /*[[${action}]]*/ 'action';
+        let sellId = /*[[${sellId}]]*/ 'sellId';
+        /*]]>*/
+    </script>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <!--==================== Replace Content Here =========================-->
+        <section class="content-header">
+            <h1 th:if="${action == 'update'}"> Update Sell </h1>
+            <h1 th:if="${action != 'update'}"> Create Sell </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item ">Sell Management</li>
+                <li th:if="${action == 'update'}" class="breadcrumb-item active">Update</li>
+                <li th:if="${action != 'update'}" class="breadcrumb-item active">Create New</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Seller</label>
+                                    <select id="seller" name="seller" class="form-control select2" style="width: 100%;">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Customer</label>
+                                <div class="form-group d-flex">
+                                    <select id="customer" name="customer" class="form-control select2" style="width: 100%;">
+                                        <option></option>
+                                    </select>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Land</label>
+                                    <select id="land" name="land" class="form-control select2" style="width: 100%;">
+                                        <option></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Discount</label>
+                                    <div class="input-group">
+                                        <input name="discount0" type="number" class="form-control" min="0" max="100" placeholder="Enter Discount">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-tags"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Final Price</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" disabled>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="blockLand" class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" data-btn="moreLand"><i class="fa fa-plus"></i></button>
+                                    <label style="margin: 0 15px">Add Land</label>
+                                    <button class="btn btn-primary" data-btn="removeLand"><i class="fa fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Deposit</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" min="0" max="9999999">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="card card-default">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Is Installment</label>
+                                                <div class="form-group">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" id="is-install" value="true" checked="">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="optionsRadios" value="false">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12" id="block-installment">
+                                <div class="form-group">
+                                    <label>Installment</label>
+                                    <div class="card card-default">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label>Annual Interest</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" min="0" max="100">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Amount</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" min="0" max="999999">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Penalty Rate</label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" min="0" max="100">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Contraction</label>
+                                    <div class="input-group">
+                                        <textarea required data-error="Please enter customer notes" type="text" rows="3" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button th:if="${action == 'update'}" type="submit" class="btn btn-primary" data-btn="update">Update Sell</button>
+                                <button th:if="${action != 'update'}" type="submit" class="btn btn-primary" data-btn="save">Create New Sell</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--===================================================================-->
+        <!-- Modal -->
+        <th:block th:replace="/layouts/sell/modal/create-customer"></th:block>
+    </div>
+</div>
+
+<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/sell/create-update.js}"></script>
+</body>
+</html>

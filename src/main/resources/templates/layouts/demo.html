@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | User Management</title>
+</head>
+<body>
+    <div class="wrapper" layout:fragment="content">
+        <div class="content-wrapper">
+        <!--==================== Replace Content Here =========================-->
+            <section class="content-header">
+                <h1> User Management </h1>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">
+                            <i class="fa fa-dashboard"></i> Home
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item active">User</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="container-fluid">
+                    <h1>Hello World</h1>
+                </div>
+
+                <div class="card card-info">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Seller_id</label>
+                            <input type="text" class="form-control my-colorpicker1" placeholder="Enter">
+                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label>Color picker with addon:</label>-->
+<!--                            <div class="input-group my-colorpicker2">-->
+<!--                                <input type="text" class="form-control">-->
+<!--                                <div class="input-group-append">-->
+<!--                                    <span class="input-group-text"><i class="fas fa-square"></i></span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div><div class="form-group">-->
+<!--                        <label>Color picker:</label>-->
+<!--                        <input type="text" class="form-control my-colorpicker1">-->
+<!--                    </div>-->
+                        <div class="form-group">
+                            <label>UserName</label>
+                            <div class="input-group my-colorpicker2">
+                                <input type="text" class="form-control" placeholder="Enter">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>PassWord</label>
+                            <div class="input-group my-colorpicker2">
+                                <input type="text" class="form-control" placeholder="Enter">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <div class="input-group my-colorpicker2">
+                                <input type="text" class="form-control" placeholder="Enter">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-square"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bootstrap-timepicker">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div class="input-group date" id="timepicker" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" placeholder="Enter">
+                                    <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!--===================================================================-->
+        </div>
+    </div>
+</body>
+</html>

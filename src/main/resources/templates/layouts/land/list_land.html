@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | Project Management</title>
+</head>
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <!--==================== Replace Content Here =========================-->
+        <section class="content-header">
+            <h1> Project Management </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">User</li>
+            </ol>
+        </section>
+        <section class="content">
+            <table id="example" class="display" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Plot_No</th>
+                    <th>Project Name</th>
+                    <th>Type</th>
+                    <th>Size</th>
+                    <th>Width</th>
+                    <th>Length</th>
+                    <th>Location</th>
+                    <th>Land Title Type</th>
+                    <th>Price</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>57545453</td>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>10*20</td>
+                    <td>61</td>
+                    <td>54654</td>
+                    <td>Kompong Cham</td>
+                    <td>Kompong Cham</td>
+                    <td>2000$</td>
+                </tr>
+                <tr>
+                    <td>57545453</td>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>10*20</td>
+                    <td>61</td>
+                    <td>54654</td>
+                    <td>Kompong Cham</td>
+                    <td>Kompong Cham</td>
+                    <td>2000$</td>
+                </tr>
+                <tr>
+                    <td>57545453</td>
+                    <td>Tiger Nixon</td>
+                    <td>System Architect</td>
+                    <td>10*20</td>
+                    <td>61</td>
+                    <td>54654</td>
+                    <td>Kompong Cham</td>
+                    <td>Kompong Cham</td>
+                    <td>2000$</td>
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+        <!--===================================================================-->
+    </div>
+</div>
+<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/project.js}"></script>
+</body>
+</html>

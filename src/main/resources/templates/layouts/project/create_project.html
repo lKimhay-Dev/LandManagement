@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{index}">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS | Project Management</title>
+</head>
+
+<body>
+<div class="wrapper" layout:fragment="content">
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1> Project Management </h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">User</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="card card-info">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>UserName</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" name="name" class="form-control" placeholder="Enter">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Location</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" name="location" class="form-control" placeholder="Enter">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Size</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" name="size" class="form-control" placeholder="Enter">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="text" name="address" class="form-control" placeholder="Enter">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-location-arrow"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Price</label>
+                                <div class="input-group my-colorpicker2">
+                                    <input type="number" name="price" class="form-control" placeholder="Enter">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-money-check-alt"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                        <div class="row">
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" id="saveProject">Create New
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</div>
+<script type="text/javascript" layout:fragment="script" th:src="@{/js/pages/project/create-project.js}"></script>
+
+</body>
+
+</html>

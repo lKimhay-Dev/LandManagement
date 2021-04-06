@@ -1,0 +1,196 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4" xmlns:th="http://www.thymeleaf.org">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link">
+        <img th:src="@{~/img/logo.png}" alt="KL Real Estate Logo" class="brand-image img-circle elevation-3">
+        <span class="brand-text font-weight-light">KL Real Estate</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="/" class="nav-link" th:classappend="${mDBActive}">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Dashboard
+<!--                            <span class="right badge badge-danger">New</span>-->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mProjectOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Project Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item" >
+                            <a href="/project/create" class="nav-link" th:classappend="${mPCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/project-list" class="nav-link" th:classappend="${mPLActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mLandOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-pause"></i>
+                        <p>
+                            Land Management
+                            <i class="fas fa-angle-left right"></i>
+<!--                            <span class="badge badge-info right">9</span>-->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/land/create" class="nav-link" th:classappend="${mLCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/land-list" class="nav-link" th:classappend="${mLLActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mSellOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-line"></i>
+                        <p>
+                            Sell Management
+                            <i class="fas fa-angle-left right"></i>
+                            <!--                            <span class="badge badge-info right">9</span>-->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/sell/create" class="nav-link" th:classappend="${mSCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/sell-list" class="nav-link" th:classappend="${mSLActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mUserOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Sys User Management
+                            <i class="fas fa-angle-left right"></i>
+<!--                            <span class="badge badge-info right">9</span>-->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/users/create" class="nav-link" th:classappend="${mUCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/user-list" class="nav-link" th:classappend="${mULActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mSellerOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-shopping-cart"></i>
+                        <p>
+                            Seller Management
+                            <i class="fas fa-angle-left right"></i>
+                            <!--                            <span class="badge badge-info right">9</span>-->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/seller/create" class="nav-link" th:classappend="${mSLCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/seller-list" class="nav-link" th:classappend="${mSLLActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mCustomerOpen}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Customer Management
+                            <i class="fas fa-angle-left right"></i>
+                            <!--                            <span class="badge badge-info right">9</span>-->
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/customer/create" class="nav-link" th:classappend="${mCCActive}">
+                                <i class="fas fa-plus-square"></i>
+                                <p>Create New</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/customer-list" class="nav-link" th:classappend="${mCLActive}">
+                                <i class="fas fa-list-ul"></i>
+                                <p>Lists</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview" th:classappend="${mPenaltyOpen}">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-user-times"></i>
+                    <p>
+                        Penalty Management
+                        <i class="fas fa-angle-left right"></i>
+<!--                        <span class="badge badge-info right">9</span>-->
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/penalty/create" class="nav-link" th:classappend="${mPTCActive}">
+                            <i class="fas fa-plus-square"></i>
+                            <p>Create New</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/penalty-list" class="nav-link" th:classappend="${mPTLActive}">
+                            <i class="fas fa-list-ul"></i>
+                            <p>Lists</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>
